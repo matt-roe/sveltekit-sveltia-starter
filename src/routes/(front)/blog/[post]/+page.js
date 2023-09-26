@@ -1,8 +1,9 @@
 import { error } from '@sveltejs/kit'
 
 export const load = async ({ params }) => {
+	console.log(params);
 	try {	
-		const post = await import(`../../../lib/posts/${params.post}.md`)
+		const post = await import(`../../../../lib/posts/${params.post}.md`)
 
 		return {
 			PostContent: post.default,
